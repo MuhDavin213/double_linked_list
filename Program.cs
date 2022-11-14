@@ -115,7 +115,14 @@ namespace double_linked_list
                     START.prev = null;
                 return true;
             }
+            /*
+             if the to deleted is in between the list then the following lines of is executed 
+            */
+            previous.next = current.next;
+            current.next.prev = previous;
+            return true;
         }
+        public bool list
     }
     internal class Program
     {
