@@ -105,7 +105,15 @@ namespace double_linked_list
             if (current.next == null)
             {
                 previous.next = null;
-                return
+                return true;
+            }
+            //node between two nodes in the list
+            if (current == START)
+            {
+                START = START.next;
+                if (START != null)
+                    START.prev = null;
+                return true;
             }
         }
     }
