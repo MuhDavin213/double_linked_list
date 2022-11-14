@@ -61,7 +61,23 @@ namespace double_linked_list
             node previous, current;
             for (current = previous = START;
                 current != null && nim >= current.noMhs;
-                previous = current, current = current.next) ;
+                previous = current, current = current.next)
+            {
+                if(nim == current.noMhs)
+                {
+                    Console.WriteLine("\nDublicate roll numbers not allowed");
+                    return ;
+                }
+            }
+            /*
+             on the exucition of the above for loop,prev and 
+            current will point to those nodes
+            between wich the node is to be inserted
+             
+             
+             */
+            newNode.next = current;
+            newNode.prev = previous;
         }
     }
     internal class Program
