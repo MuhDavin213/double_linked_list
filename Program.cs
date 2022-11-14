@@ -78,12 +78,42 @@ namespace double_linked_list
              */
             newNode.next = current;
             newNode.prev = previous;
+
+            //if the node is to be issarted at the end of the list
+            if(current == null)
+            {
+                newNode.next = null;
+                newNode.next = newNode;
+                return;
+
+            }
+            current.prev = newNode;
+            previous.next = newNode;
+        }
+        public bool search(int rollNo, ref node previous, ref node current)
+        {
+            for (previous = current = START; current != null && rollNo != current.noMhs; previous = current, current = current.next) { }
+            return(current != null);
+        }
+        public bool dellNode(int rollNo)
+        {
+            node previous, current;
+            previous = current = null;
+            if (search(rollNo, ref previous, ref current) == false)
+                return false;
+            //the beginning of data
+            if (current.next == null)
+            {
+                previous.next = null;
+                return
+            }
         }
     }
     internal class Program
     {
         static void Main(string[] args)
         {
+
         }
     }
 }
